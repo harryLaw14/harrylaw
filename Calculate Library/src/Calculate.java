@@ -37,7 +37,73 @@ public class Calculate {
 	}
 	
 	public static int toImproperFrac(int A, int B, int C) {
-		return 
+		return ((C*A)/C);
 	}
-
+		
+	public static double toMixedNum(double A, double B, double C) {
+		return (A+(B/C));
+	}
+	
+	public static int foil(int num1, int num2, int num3, int num4, int n) {
+		return (((num1*n)+num2)*((num3*n)-7));
+	}
+	
+	public static boolean isDivisibleBy(int x, int y) {
+		
+		if (x%y == 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public static double absValue(double num) {
+		if (num == -num) {
+			return(num);
+		} else {
+			return(num);
+		}
+	}
+	
+	public static int max(int num1, int num2) {
+		if (num1>=num2) {
+			return num1;
+		} else if (num1<=num2) {
+			return num2;
+		}
+	}
+		
+	public static double max2(int num1, int num2, int num3) {
+		if (num1>=num2) {
+			return num1;
+		} else if (num1<=num2) {
+			return num2;
+		} else if (num1>=num3) {
+			return num1;
+		} else if (num1<=num3) {
+			return num3;
+		} else if (num2>=num3) {
+			return num2;
+		} else if (num2<=num3) {
+			return num3;
+		}
+	}
+	
+	public static int min(int num1, int num2) {
+		if (num1>= num2) {
+			return num2;
+		} else if (num1<=num2) {
+			return num1;
+		}
+	}
 }
+		
+	
+
+		
+		
+	
+	
+	
+		
+
