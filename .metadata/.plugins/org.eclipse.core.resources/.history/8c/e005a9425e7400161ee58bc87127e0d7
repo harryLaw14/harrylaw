@@ -97,8 +97,8 @@ public class Calculate {
 		}
 	}
 
-	public static double round2(double num) {
-		return (num*100);
+	public static double round2(num) {
+		
 	}
 
 }
