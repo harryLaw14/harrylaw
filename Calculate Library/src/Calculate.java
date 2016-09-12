@@ -98,12 +98,35 @@ public class Calculate {
 	}
 
 	public static double round2(double num) {
-		return (num*100);
+		if (num<0) {
+			return (num*100);
+		}else {
+			return (num/100);
+		}
 	}
 
-}
+	public static double exponent (int power, double base) {
+		double answer =1.0;
+			for (int k =1; k<= power; k++) {
+				answer *= base;
+			}
+	}
 	
+	public static int factorial (int n) {
+		for (int i;i<=n;i++){
+		}
+	}
+	
+	public static boolean isPrime(int n) {
+		for(int i=2;i<n;i++) {
+	    	if(n%i==0) {
+	    		return false;
+	    	}else {
+	    		return true;
+		}
+	}
 
+	public static int gcf (){
 		
 	
 
