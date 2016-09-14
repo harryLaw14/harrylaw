@@ -97,13 +97,12 @@ public class Calculate {
 		}
 	}
 
-	public static double round2(double num1) {
-		double answer;
-		int rounded=(int)(num1*100);
-		if(100*num1-rounded>=.5)
-			answer= (int)(num1*100+1)/100;
-		else 
-			answer =(int)(num1*100)/100;
+	public static double round2(double num) {
+		if (num<0) {
+			return (num*100);
+		}else {
+			return (num/100);
+		}
 	}
 
 	public static double exponent (int power, double base) {
@@ -114,13 +113,9 @@ public class Calculate {
 	}
 	
 	public static int factorial (int n) {
-		int product = 1;
-		for (int i = 2; i<=n;i++) {
-			product = product * i;
+		for (int i;i<=n;i++){
 		}
-		return product;
 	}
-		
 	
 	public static boolean isPrime(int n) {
 		for(int i=2;i<n;i++) {
@@ -133,16 +128,17 @@ public class Calculate {
 	}
 
 	public static int gcf (int num1, int num2) {
-		for(int i=num1; i>0; i--) {
-			if(num1%i==0&&num2%i==0) {
-				Calculate.isDivisibleBy(num1, num2);
-				return i;
+		while (num1 != 0 && num2 != 0) {
+			if (num1>=num2){
+				num1 = num1-num2;
+			}else {
+				num2 = num2-num1;
 			}
+			Calculate.isDivisibleBy(num1, num2);
 		}
 	}
-		
 	
-	public static double sqrt(double num1) {
+	public static double sqrt(){
 		
 	}
 		

@@ -102,8 +102,6 @@ public class Calculate {
 		int rounded=(int)(num1*100);
 		if(100*num1-rounded>=.5)
 			answer= (int)(num1*100+1)/100;
-		else 
-			answer =(int)(num1*100)/100;
 	}
 
 	public static double exponent (int power, double base) {
@@ -142,7 +140,7 @@ public class Calculate {
 	}
 		
 	
-	public static double sqrt(double num1) {
+	public static double sqrt(){
 		
 	}
 		
