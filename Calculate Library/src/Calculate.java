@@ -132,13 +132,12 @@ public class Calculate {
 		}
 	}
 
-	public static int gcf (int num1, int num2) {
-		for(int i=num1; i>0; i--) {
-			if(num1%i==0&&num2%i==0) {
-				Calculate.isDivisibleBy(num1, num2);
-				return i;
-			}
-		}
+	public int gcf(int a, int b) {
+	    if (b == 0){
+	        return Math.abs(a);
+		}else{ 
+	        return Math.abs((gcf (b, a % b)));
+	    }
 	}
 		
 	
