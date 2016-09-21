@@ -102,6 +102,8 @@ public class Calculate {
 		int rounded=(int)(num1*100);
 		if(100*num1-rounded>=.5)
 			answer= (int)(num1*100+1)/100;
+		else 
+			answer =(int)(num1*100)/100;
 	}
 
 	public static double exponent (int power, double base) {
@@ -130,19 +132,28 @@ public class Calculate {
 		}
 	}
 
-	public static int gcf (int num1, int num2) {
-		for(int i=num1; i>0; i--) {
-			if(num1%i==0&&num2%i==0) {
-				Calculate.isDivisibleBy(num1, num2);
-				return i;
-			}
-		}
+	public int gcf(int a, int b) {
+	    if (b == 0){
+	        return Math.abs(a);
+		}else{ 
+	        return Math.abs((gcf (b, a % b)));
+	    }
 	}
 		
 	
-	public static double sqrt(){
-		
+	public static double sqrt(double num1) {
+		double t;
+	 
+		double squareRoot = num1 / 2;
+	 
+		do {
+			t = squareRoot;
+			squareRoot = (t + (num1 / t)) / 2;
+		} while ((t - squareRoot) != 0);
+	 
+		return squareRoot;
 	}
+
 		
 	
 

@@ -114,9 +114,6 @@ public class Calculate {
 	}
 	
 	public static int factorial (int n) {
-		if (n<0){
-			throw new IllegalArgumentException ("-n");
-		}
 		int product = 1;
 		for (int i = 2; i<=n;i++) {
 			product = product * i;
@@ -145,20 +142,8 @@ public class Calculate {
 		
 	
 	public static double sqrt(double num1) {
-		double t;
-	 
-		double squareRoot = num1 / 2;
-	 
-		do {
-			t = squareRoot;
-			squareRoot = (t + (num1 / t)) / 2;
-		} while ((t - squareRoot) != 0);
-	 
-		return squareRoot;
+		
 	}
-	
-	public static 
-
 		
 	
 
