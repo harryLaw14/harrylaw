@@ -25,6 +25,12 @@ public class Magpie2 {
 				|| statement.indexOf("Miss") >= 0
 				|| statement.indexOf("Mrs.") >= 0) {
 			response = "Sounds like a good teacher.";
+		} else if (statement.indexOf("friend") >= 0) {
+			response = "I like your friend.";
+		} else if (statement.indexOf("enemy") >= 0) {
+			response = "I don't like that guy.";
+		} else if (statement.indexOf("hi") >=0) {
+			response = "WASSUPPPP!"; 
 		} else {
 			response = getRandomResponse();
 		}
@@ -36,7 +42,7 @@ public class Magpie2 {
 	 * returns a non-committal string
 	 */
 	private String getRandomResponse() {
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -49,6 +55,10 @@ public class Magpie2 {
 			response = "Do you really think so?";
 		} else if (whichResponse == 3) {
 			response = "You don't say.";
+		} else if (whichResponse == 4) {
+			response = "WOW";
+		} else if (whichResponse == 5) {
+			response = "Nice";
 		}
 
 		return response;
