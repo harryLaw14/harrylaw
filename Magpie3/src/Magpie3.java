@@ -25,8 +25,30 @@ public class Magpie3 {
 	
 	public String getResponse(String statement) {
 		
-		// Paste part 2 code here	
-		
+		// Paste part 2 code here
+			String response = "";
+			if (statement.indexOf("no") >= 0) {
+				response = "Why so negative?";
+			} else if (statement.indexOf("mother") >= 0
+					|| statement.indexOf("father") >= 0
+					|| statement.indexOf("sister") >= 0
+					|| statement.indexOf("brother") >= 0) {
+				response = "Tell me more about your family.";
+			} else if (statement.indexOf("Ms.") >= 0
+					|| statement.indexOf("Mr.") >= 0
+					|| statement.indexOf("Miss") >= 0
+					|| statement.indexOf("Mrs.") >= 0) {
+				response = "Sounds like a good teacher.";
+			} else if (statement.indexOf("friend") >= 0) {
+				response = "I like your friend.";
+			} else if (statement.indexOf("enemy") >= 0) {
+				response = "I don't like that guy.";
+			} else if (statement.indexOf("hi") >=0) {
+				response = "WASSUPPPP!"; 
+			} else {
+				response = getRandomResponse();
+			}
+			return response;
 		
 	}
 
@@ -100,7 +122,26 @@ public class Magpie3 {
 	private String getRandomResponse() {
 		
 		// Paste part 2 code here	
-		
-	}
+			final int NUMBER_OF_RESPONSES = 6;
+			double r = Math.random();
+			int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
+			String response = "";
+
+			if (whichResponse == 0) {
+				response = "Interesting, tell me more.";
+			} else if (whichResponse == 1) {
+				response = "Hmmm.";
+			} else if (whichResponse == 2) {
+				response = "Do you really think so?";
+			} else if (whichResponse == 3) {
+				response = "You don't say.";
+			} else if (whichResponse == 4) {
+				response = "WOW";
+			} else if (whichResponse == 5) {
+				response = "Nice";
+			}
+
+			return response;
+		}
 
 }
