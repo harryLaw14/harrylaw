@@ -36,12 +36,13 @@ public class Calculate {
 		return ((num2*num2)-4*(num1*num3));  
 	}
 	
-	public static int toImproperFrac() {
+	public static void toImproperFrac() {
 		int x = 3;
 		int y = 1;
 		int z = 2;
 		int answer = ((x+y+z)/2);
-		return answer; 
+		System.out.println(answer);
+		
 	}
 		
 	public static String toMixedNum(double A, double B, double C) {

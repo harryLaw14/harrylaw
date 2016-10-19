@@ -41,7 +41,8 @@ public class Calculate {
 		int y = 1;
 		int z = 2;
 		int answer = ((x+y+z)/2);
-		return answer; 
+		return answer;
+		
 	}
 		
 	public static String toMixedNum(double A, double B, double C) {
