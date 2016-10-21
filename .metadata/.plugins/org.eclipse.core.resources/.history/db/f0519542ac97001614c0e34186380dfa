@@ -28,11 +28,5 @@ public class DoMath {
 		Calculate.toRadians(5);
 		System.out.print(Calculate.toRadians(5));
 		
-		Calculate.discriminant(6, 9, 2);
-		System.out.println(Calculate.discriminant(6, 9, 2));
-		
-		
-		
-		
 	}
 }
