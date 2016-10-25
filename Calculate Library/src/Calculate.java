@@ -17,11 +17,11 @@ public class Calculate {
 	}
 	
 	public static double average(double num1, double num2) {
-		return(Math.abs(num1 + num2)/2); //takes the average of 2 numbers
+		return((num1 + num2)/2); //takes the average of 2 numbers
 	}
 	
 	public static double average(double num1, double num2, double num3) {
-		return((num1 + num2 + num3)/2); //takes the average of 3 numbers
+		return((num1 + num2 + num3)/3); //takes the average of 3 numbers
 	}
 	
 	public static double toDegrees(double num) { //converts to degrees
@@ -133,7 +133,7 @@ public class Calculate {
 	    }
 	}
 
-	public static int gcf(int num1, int num2) {
+	public static int gcf(int num1, int num2) { //takes 2 numbers and returns the greatest common factor
 	    if (num2 == 0){
 	        return Math.abs(num1);
 		}else{ 
@@ -142,7 +142,7 @@ public class Calculate {
 	}
 		
 	
-	public static double sqrt(double num1) {
+	public static double sqrt(double num1) { // takes the square root of a number
 		double x;
 	 
 		double squareRoot = num1 / 2;

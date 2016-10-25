@@ -16,11 +16,8 @@ public class DoMath {
 		Calculate.cube(-5);
 		System.out.println(Calculate.cube(-5));
 		
-		Calculate.average(-4,5);
-		System.out.println(Calculate.average(-4, 5));
-		
-		Calculate.average(4, -5, 6);
-		System.out.println(Calculate.average(4, -5, 6));
+		Calculate.average(4,5);
+		System.out.println(Calculate.average(4,5));
 		
 		Calculate.toDegrees(5);
 		System.out.println(Calculate.toDegrees(5));
@@ -28,8 +25,8 @@ public class DoMath {
 		Calculate.toRadians(5);
 		System.out.print(Calculate.toRadians(5));
 		
-		Calculate.discriminant(6, 9, 2);
-		System.out.println(Calculate.discriminant(6, 9, 2));
+		Calculate.discriminant(6, -4, 2);
+		System.out.println(Calculate.discriminant(6, -4, 2));
 		
 		
 		
