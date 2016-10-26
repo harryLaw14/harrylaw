@@ -14,10 +14,10 @@ public class Split
 		//		it will split at the word "really" and return an array of ["I "," like "," apples!"]
 		
 		//play around with String.split! what happens if you "I reallyreally like apples".split("really") ?
-		
-		String [] test = "I reallyreally like apples".split("really");
-		for (int i=0; i<test.length;i++){
-			System.out.print(test[i] + " ");
+		String test = "really like really apples";
+		String [] testing = test.split("really");
+		for (int i=0; i<testing.length;i++){
+			System.out.print(testing[i] + " ");
 		}
 		
 		//Your task:
@@ -25,8 +25,12 @@ public class Split
 		 * use String.split to split up the sandwich by the word "bread" and return what's in the middle of the sandwich and ignores what's on the outside
 		 * What if it's a fancy sandwich with multiple pieces of bread?
 		*/
-		
-		
+		System.out.println();
+		String sandwich="applespineapplesbreadlettustomatobaconmayohambreadcheese"; 
+		String[] bigsandwich =sandwich.split("bread");
+		for (int j=0; j<bigsandwich.length; j++){
+			System.out.print(bigsandwich[j] + " ");
+		}
 		//Your task pt 2:
 		/*Write a method that take in a string like "apples pineapples bread lettus tomato bacon mayo ham bread cheese" describing a sandwich
 		 * use String.split to split up the sandwich at the spaces, " ", and return what's in the middle of the sandwich and ignores what's on the outside

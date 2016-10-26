@@ -8,43 +8,43 @@
  */
 public class Calculate {
 	
-	public static int square(int num) {
-		return(num*num); //squares a number
+	public static int square(int number) {
+		return(number*number); //squares a number
 	}
 	
-	public static int cube(int num) {
-		return(num*num*num); //cubes a number
+	public static int cube(int number) {
+		return(number*number*number); //cubes a number
 	}
 	
-	public static double average(double num1, double num2) {
-		return((num1 + num2)/2); //takes the average of 2 numbers
+	public static double average(double number1, double number2) {
+		return((number1 + number2)/2); //takes the average of 2 numbers
 	}
 	
-	public static double average(double num1, double num2, double num3) {
-		return((num1 + num2 + num3)/3); //takes the average of 3 numbers
+	public static double average(double number1, double number2, double number3) {
+		return((number1 + number2 + number3)/3); //takes the average of 3 numbers
 	}
 	
-	public static double toDegrees(double num) { //converts to degrees
-		return((num*3.14159)*180); 
+	public static double toDegrees(double number) { //converts to degrees
+		return((number*3.14159)*180); 
 	}
 	
-	public static double toRadians(double num) { //converts to radians
-		return((num/3.14159)/180);
+	public static double toRadians(double number) { //converts to radians
+		return((number/3.14159)/180);
 	}
 	
 	public static double discriminant(double a, double b, double c) {
 		return ((b*b)-4*(a*c));  //finds the discriminant of the quadratic formula
 	}
 	
-	public static int toImproperFrac() { //converts to improper fraction
+	public static String toImproperFrac(int wholenumber, int numerator, int denominator) { //converts to improper fraction
 		 
 	}
 		
-	public static String toMixedNum(double A, double B, double C) { //converts to mixed number
-		
+	public static String toMixedNum(int numerator, int denominator) { //converts to mixed number
+		return ((numerator/denominator)"_"(numerator%denominator));
 	}
 	
-	public static int foil() { //foils the values
+	public static String foil(int a, int b, int c , int d, String n) { //foils the values
 		
 	}
 	
