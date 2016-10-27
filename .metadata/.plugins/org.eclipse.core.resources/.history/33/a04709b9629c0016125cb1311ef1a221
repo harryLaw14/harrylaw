@@ -2,9 +2,8 @@
 public class Split 
 {
 
-	public static void main(String[] args) {
-		
-	}
+	public static void main(String[] args) 
+	{
 		//String.split();
 		//It's a method that acts on a string, <StringName>.split(<String sp>);
 		//Where sp is the string where the string splits
@@ -15,27 +14,22 @@ public class Split
 		//		it will split at the word "really" and return an array of ["I "," like "," apples!"]
 		
 		//play around with String.split! what happens if you "I reallyreally like apples".split("really") ?
-		
-		public static String partone; {
-			String test = "I really like really apples";
-			String [] testing = test.split("really");
-			for (int i=0; i<testing.length;i++){
-				System.out.print(testing[i] + " ");
-			}
+		String test = "I really like really apples";
+		String [] testing = test.split("really");
+		for (int i=0; i<testing.length;i++){
+			System.out.print(testing[i] + "\" ");
 		}
+		
 		//Your task:
 		/*Write a method that take in a string like "applespineapplesbreadlettustomatobaconmayohambreadcheese" describing a sandwich
 		 * use String.split to split up the sandwich by the word "bread" and return what's in the middle of the sandwich and ignores what's on the outside
 		 * What if it's a fancy sandwich with multiple pieces of bread?
 		*/
-		
-		public static String parttwo;{	
-			System.out.println();
-			String a="applespineapplesbreadlettustomatobaconmayohambreadcheese"; 
-			String[] bigsandwich =a.split("bread");
-			for (int j=0; j<bigsandwich.length; j++){
-				System.out.print(substring.);
-			}
+		System.out.println();
+		String a="applespineapplesbreadlettustomatobaconmayohambreadcheese"; 
+		String[] bigsandwich =a.split("bread");
+		for (int j=0; j<bigsandwich.length; j++){
+			System.out.print(bigsandwich[j] + " ");
 		}
 		//Your task pt 2:
 		/*Write a method that take in a string like "apples pineapples bread lettus tomato bacon mayo ham bread cheese" describing a sandwich
@@ -43,7 +37,8 @@ public class Split
 		 * Again, what if it's a fancy sandwich with multiple pieces of bread?
 		*/
 
-}		
+		
 
+	}
 
-
+}
