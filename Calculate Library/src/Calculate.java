@@ -3,7 +3,7 @@
  */
 
 /**
- * @author APCS2
+ * Harry Law APCS2
  *
  */
 public class Calculate {
@@ -33,25 +33,28 @@ public class Calculate {
 	}
 	
 	public static double discriminant(double a, double b, double c) {
-		return ((b*b)-4*(a*c));  //finds the discriminant of the quadratic formula
+		return (b*b-4*a*c);  //finds the discriminant of the quadratic formula
 	}
 	
 	public static String toImproperFrac(int wholenumber, int numerator, int denominator) { //converts to improper fraction
-		 
+		 return ((wholenumber*denominator+numerator) + "/" + denominator);
 	}
 		
 	public static String toMixedNum(int numerator, int denominator) { //converts to mixed number
-		return ((numerator/denominator)"_"(numerator%denominator));
+		return ((numerator/denominator)+"_"+(numerator%denominator)+ "/" + denominator);
 	}
 	
-	public static String foil(int a, int b, int c , int d, String n) { //foils the values
-		
+	public static String foil(int a, int b, int c , int d, String x) { //foils the values
+		return (a*c + "x^2 + " + a*d + b*c + " x + " + b*d);
 	}
 	
 	public static boolean isDivisibleBy(int x, int y) {
+		
+		if (y == 0){ //can't divide 0
+			throw new IllegalArgumentException ("Can't Divide 0.");
 		//returns true if the remainder is zero
 		//returns false if the remainder is greater than zero
-		if (x/y == 0) {//x is dividend    // y is divisor
+		}else if (x/y == 0) {//x is dividend    // y is divisor
 			return true;
 		} else { 
 			return false;
@@ -79,10 +82,8 @@ public class Calculate {
 			return num1;
 		} else if (num2>num1 && num2>num3) {
 			return num2;
-		} else if (num3>num1 && num3>num1) {
+		} else{
 			return num3;
-		} else if (){
-			return 0;
 		}
 	}
 	
@@ -105,7 +106,7 @@ public class Calculate {
 		return answer;
 	}
 
-	public static double exponent (int power, double base) {//returns the exponential value
+	public static double exponent (double base, int power) {//returns the exponential value
 		double answer=1.0;
 			for (int k=1; k<=power; k++) {
 				answer *= base;
@@ -113,7 +114,7 @@ public class Calculate {
 			return answer;
 	}
 	
-	public static int factorial (int n) {
+	public static int factorial (int n) {//factorial of a number
 		if (n<0){
 			throw new IllegalArgumentException ("-n");
 		}
@@ -155,19 +156,21 @@ public class Calculate {
 		return squareRoot;
 	}
 	
-	public static String quadForm(int a, int b, int c){
+	public static String quadForm(int a, int b, int c){//quadratic formula
 		double discriminant = Calculate.discriminant(a, b, c);
-		if (discriminant < 0){
-			return "There is no real roots";
-			
-		}else if (discriminant == 0){
-			double rootOne = (-b+discriminant)/(2*a);
+		if (discriminant == 0){
+			double rootOne = ((-b+discriminant)/(2*a));
 			return "The Root = " +rootOne;
 			
+		}else if (discriminant < 0){
+			return "There is no real roots";
 		}else{
-			double rootone = (-b -discriminant)/(2*a);
+			double rootone = ((-b - discriminant)/(2*a));
 			rootone = Calculate.round2(rootone);
-		}
+			double roottwo = ((-b +discriminant)/(2*a));
+			roottwo = Calculate.round2(roottwo);
+			return "The first root = " + rootone + "and the second root = " + roottwo;
+	 	}
 	}
 	
 	
