@@ -113,6 +113,7 @@ public class Magpie3 {
 	 */
 	private int findKeyword(String statement, String goal) {
 		return findKeyword(statement, goal, 0);
+			 
 	}
 
 	/**

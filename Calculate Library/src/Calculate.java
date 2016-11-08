@@ -25,11 +25,11 @@ public class Calculate {
 	}
 	
 	public static double toDegrees(double number) { //converts to degrees
-		return((number*3.14159)/(3.14159/180)); 
+		return(number*(180/3.14159)); //returns degrees
 	}
 	
 	public static double toRadians(double number) { //converts to radians
-		return((number*3.14159)/180);
+		return((number*3.14159)/180);//returns radians
 	}
 	
 	public static double discriminant(double a, double b, double c) {
@@ -37,35 +37,36 @@ public class Calculate {
 	}
 	
 	public static String toImproperFrac(int wholenumber, int numerator, int denominator) { //converts to improper fraction
-		 return ((wholenumber*denominator+numerator) + "/" + denominator);
+		 return ((wholenumber*denominator+numerator) + "/" + denominator);//returns
 	}
-		
+	
+	
 	public static String toMixedNum(int numerator, int denominator) { //converts to mixed number
-		return ((numerator/denominator)+"_"+(numerator%denominator)+ "/" + denominator);
-	}
-	
-	public static String foil(int a, int b, int c , int d, String x) { //foils the values
-		return (a*c + "x^2 + " + a*d + b*c + " x + " + b*d);
-	}
-	
-	public static boolean isDivisibleBy(int x, int y) {
+		return ((numerator/denominator)+"_"+(numerator%denominator)+"/"+(denominator));//returns
 		
-		if (y == 0){ //can't divide 0
-			throw new IllegalArgumentException ("Can't Divide 0.");
-		//returns true if the remainder is zero
-		//returns false if the remainder is greater than zero
-		}else if (x/y == 0) {//x is dividend    // y is divisor
-			return true;
-		} else { 
-			return false;
+	}//fail
+	
+	public static String foil(int a, int b, int c, int d, String x){// foils the inputs
+		return (a*c + "x^2 + " + a*d + b*c + "x " + b*d);//returns 
+	}//fail
+	
+	public static boolean isDivisibleBy(int x, int y){//determines if the two inputs are divisible
+		if (y == 0) {
+			throw new IllegalArgumentException ("Can't Divide 0"); //Can't divide 0
+		}
+		if (x % y == 0){//determines if it's divisible 
+			return true;//if yes, true
+		}
+		else{
+			return false;//no, false
 		}
 	}
 	
 	public static double absValue(double num) {
 		if (num<0) { //returns the absolute value of a number
-			return(num);
+			return((-1)*num);//returns the absolute value
 		} else {
-			return((-1)*num);
+			return(num);//otherwise, returns the number
 		}
 	}
 	
@@ -95,15 +96,16 @@ public class Calculate {
 		}
 	}
 
-	public static double round2(double num) {//returns a rounded number by 2 digits
-		double answer;
-		int round=(int)(num*100);
-		if(100*num-round>=.5){
-			answer= (int)(num*100+1)/100;
-		}else{ 
-			answer =(int)(num*100)/100;
+	public static double round2 (double number){//rounds number up or down
+		int input = ((int)(number * 100));
+		if ((number * 100)-input >= .5){
+			double roundsup = ((int)(number*100)+1)/100.00;//up
+		    return roundsup;  
 		}
-		return answer;
+		else {
+			double roundsdown = (int)(number*100)/(100.00);//down
+			return roundsdown;
+		}
 	}
 
 	public static double exponent (double base, int power) {//returns the exponential value
@@ -128,11 +130,11 @@ public class Calculate {
 	
 	public static boolean isPrime(int n) { //determines whether a number is prime or not.
 		if(n%2==0) {
-	    	return true;
-	    }else {
 	    	return false;
+	    }else {
+	    	return true;
 	    }
-	}
+	}	
 
 	public static int gcf(int num1, int num2) { //takes 2 numbers and returns the greatest common factor
 	    if (num2 == 0){
@@ -171,9 +173,7 @@ public class Calculate {
 			roottwo = Calculate.round2(roottwo);
 			return "The first root = " + rootone + "and the second root = " + roottwo;
 	 	}
-	}
-	
-	
+	}//fail
 	
 }
 
