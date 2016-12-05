@@ -8,24 +8,24 @@ public class FracCalc {
 	public static void main (String[] args){
 		Scanner userInput = new Scanner(System.in);
 		System.out.println("Input two mixed fractions (with underscore) separated by spaces and an operator.");
-		String mixedFrac = userInput.nextLine();
+		String mixedFraction = userInput.nextLine();
 		do {
-			if (mixedFrac.contains(" ") && (mixedFrac.contains("+")||mixedFrac.contains("-")||mixedFrac.contains("*")||mixedFrac.contains("/"))){
-				System.out.println(produceAnswer(mixedFrac));
+			if (mixedFraction.contains(" ") && (mixedFraction.contains("+")||mixedFraction.contains("-")||mixedFraction.contains("*")||mixedFraction.contains("/"))){
+				System.out.println(produceAnswer(mixedFraction));
 			} 
 			else {
 				System.out.println("Please enter a fraction with an operator and spaces between each term.");
 			}
 			System.out.println("If you wish to quit, type quit");
-			System.out.println("Input two mixed fractions (with underscore) separated by spaces and an operator.");
-			mixedFrac = userInput.nextLine();
+			System.out.println("Enter two mixed fractions (with underscore representing \"and\") separated by spaces and an operator.");
+			mixedFraction = userInput.nextLine();
 		}
-		while (!mixedFrac.equals("quit"));
+		while (!mixedFraction.equals("quit"));
 	}
 	
-	public static String produceAnswer(String mixedFrac){
-		if (mixedFrac.contains(" ")){
-			String[] partsOfFrac = mixedFrac.split(" ");
+	public static String produceAnswer(String mixedFraction){
+		if (mixedFraction.contains(" ")){
+			String[] partsOfFrac = mixedFraction.split(" ");
 			String[] firstOperand = produceOperand(partsOfFrac, 0);
 			String[] secondOperand = produceOperand(partsOfFrac, 2);
 			String operator = partsOfFrac[1];

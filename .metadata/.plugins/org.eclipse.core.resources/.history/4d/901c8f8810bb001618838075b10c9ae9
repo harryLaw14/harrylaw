@@ -17,7 +17,7 @@ public class FracCalc {
 				System.out.println("Please enter a fraction with an operator and spaces between each term.");
 			}
 			System.out.println("If you wish to quit, type quit");
-			System.out.println("Input two mixed fractions (with underscore) separated by spaces and an operator.");
+			System.out.println("Enter two mixed fractions (with underscore representing \"and\") separated by spaces and an operator.");
 			mixedFrac = userInput.nextLine();
 		}
 		while (!mixedFrac.equals("quit"));

@@ -17,7 +17,7 @@ public class FracCalc {
 				System.out.println("Please enter a fraction with an operator and spaces between each term.");
 			}
 			System.out.println("If you wish to quit, type quit");
-			System.out.println("Input two mixed fractions (with underscore) separated by spaces and an operator.");
+			System.out.println("Enter two mixed fractions (with underscore representing \"and\") separated by spaces and an operator.");
 			mixedFrac = userInput.nextLine();
 		}
 		while (!mixedFrac.equals("quit"));
@@ -143,34 +143,20 @@ public class FracCalc {
 		return answer;
 	}
 	
-	public static int[] toImproperFrac(int[] operand){
-		int[] improperFrac = new int[3];
-		improperFrac[0] = 0;
-		improperFrac[1] = operand[0] * operand[2] + operand[1];
-		improperFrac[2] = operand[2];
-		return improperFrac;
+	public static String toImproperFrac(int wholenumber, int numerator, int denominator) { //converts to improper fraction
+		 return ((wholenumber*denominator+numerator) + "/" + denominator);//returns
 	}
 	
-	public static String toMixedNum(int num1, int num2){
-		return (num1/num2 + "_" + num1 % num2 + "/" + num2);
+	public static String toMixedNum(int wholenumber, int denominator){
+		return (wholenumber/denominator + "_" + wholenumber% denominator + "/" + denominator);
 	}
 	
-	public static int gcf(int num1, int num2){
-		int gcf = 1;
-		if(num1 > num2){
-			for(int i = num2; i >= 1; i--){
-				if(num1 % i == 0 && num2 % i == 0){
-					return i;
-				}
-			}
-		} else {
-			for(int j = num1; j >=1; j--){
-				if(num1 % j == 0 && num2 % j == 0){
-					return j;
-				}
-			}
-		}
-		return gcf;
+	public static int gcf(int num1, int num2) { //takes 2 numbers and returns the greatest common factor
+	    if (num2 == 0){
+	        return Math.abs(num1);
+		}else{ 
+	        return Math.abs((gcf (num2, num1 % num2)));
+	    }
 	}
 }
     
