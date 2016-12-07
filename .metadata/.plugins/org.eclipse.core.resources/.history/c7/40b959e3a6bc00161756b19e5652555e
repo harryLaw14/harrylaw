@@ -2,9 +2,7 @@
 package fracCalc;
 
 import java.util.*;
-
 public class FracCalc{
-	
 	public static void main(String[] args){
 		Scanner userInput = new Scanner(System.in); 
 		String input;
@@ -18,13 +16,12 @@ public class FracCalc{
 			}
 		}while(!(input.equals("quit")));
 	}
-	
 	public static String produceAnswer(String input){ //opValues is operand values
 		String expression = input; 
 		String[] output = expression.split(" ");
 		String[] operands = parseOperands(output);
-		int[] opValues = new int[6]; 
-		for (int i = 0; i < 6; i++){
+		int[] opValues = new int[7]; 
+		for (int i = 1; i <= 6; i++){
 			opValues[i] = Integer.parseInt(operands[i]);
 		}
 		opValues = toImproperFrac(opValues);
@@ -61,7 +58,6 @@ public class FracCalc{
 			return (opValues[0] + "_" + absValue(opValues[1]) + "/" + absValue(opValues[2]));
 		}
 	}
-	
 	public static String[] parseOperands(String[] result){ //determines the function
 		String[] operands = new String[6];
 		if (result[0].indexOf("_") > 0){
@@ -102,7 +98,6 @@ public class FracCalc{
 		}
 		return operands;
 	}
-	
 	public static int[] toImproperFrac(int[] opValues){ //converts a mixed number to improper fraction
 		int addNum1 = opValues[0] * opValues[2];
 		if (addNum1 < 0){
@@ -122,7 +117,6 @@ public class FracCalc{
 		opValues[3] = 0;
 		return opValues;	
 	}
-	
 	public static int[] add(int[] opValues){ //adding function
 		opValues[1] = opValues[1] * opValues[5];
 		opValues[4] = opValues[4] * opValues[2];
@@ -132,7 +126,6 @@ public class FracCalc{
 		opValues[1] = opValues[1] + opValues[4];
 		return opValues;
 	}
-	
 	public static int[] subtract(int[] opValues){ //subtracting function
 		opValues[1] = opValues[1] * opValues[5];
 		opValues[4] = opValues[4] * opValues[2];
@@ -142,33 +135,28 @@ public class FracCalc{
 		opValues[1] = opValues[1] - opValues[4];
 		return opValues;
 	}
-	
 	public static int[] multiply(int[] opValues){ //multiplying function
 		opValues[1] = opValues[1] * opValues[4];
 		opValues[2] = opValues[2] * opValues[5];
 		return opValues;
 	}
-	
 	public static int[] divide(int[] opValues){ //dividing function
 		opValues[1] = opValues[1] * opValues[5];
 		opValues[2] = opValues[2] * opValues[4];
 		return opValues;
 	}
-	
 	public static int[] toMixedNum(int[] opValues){ //converts improper fraction to mixed number
 		opValues[0] = opValues[1] / opValues[2];							
 		opValues[1] = opValues[1] % opValues[2];
 		opValues[2] = opValues[2];
 		return opValues;	
 	}
-	
 	public static int[] reducefrac(int[] opValues){ //reduces the fraction
 		int gcf = gcf(opValues[1], opValues[2]);
 		opValues[1] = opValues[1] / gcf;
 		opValues[2] = opValues[2] / gcf;
 		return opValues;
 	}
-	
 	public static int gcf(int x, int y){ //finds greatest common factor													
 		int factor = 1;
 		for (int i = 1; i <= absValue(x) && i <= absValue(y); i++){			
@@ -178,10 +166,9 @@ public class FracCalc{
 		}
 		return factor;
 	}
-	
 	public static boolean isDivisibleBy(int x, int y){ //determines if the value is divisible by the other	
 		if (y == 0){											
-			throw new IllegalArgumentException("Can't divide by 0.");
+			throw new IllegalArgumentException("Can't divide 0. Choose another number");
 		}
 		if (x % y == 0){
 			return true;
@@ -190,7 +177,6 @@ public class FracCalc{
 			return false;
 		}
 	}
-	
 	public static int absValue(int n){	//finds the absolute value	
 		int answer;
 		if (n >= 0){

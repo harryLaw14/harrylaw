@@ -191,14 +191,11 @@ public class FracCalc{
 		}
 	}
 	
-	public static int absValue(int n){	//finds the absolute value	
-		int answer;
-		if (n >= 0){
-			answer =  n;
+	public static double absValue(double num) {
+		if (num<0) { //returns the absolute value of a number
+			return((-1)*num);//returns the absolute value
+		} else {
+			return(num);//otherwise, returns the number
 		}
-		else{
-			answer = (n - (2 * n));						
-		}
-		return answer;
 	}
 }
