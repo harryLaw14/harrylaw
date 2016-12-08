@@ -96,13 +96,13 @@ public class FracCalc{
 	}
 	
 	public static int[] toImproperFrac(int[] opValues){ //converts a mixed number to improper fraction
-		int addNum1 = opValues[0] * opValues[2]; //1st number
+		int addNum1 = opValues[0] * opValues[2];
 		if (addNum1 < 0){
 			opValues[1] = addNum1 - opValues[1];
 		}else{
 			opValues[1] = addNum1 + opValues[1];
 		}
-		int addNum2 = opValues[3] * opValues[5]; //2nd number
+		int addNum2 = opValues[3] * opValues[5];
 		if (addNum2 < 0){
 			opValues[4] = addNum2 - opValues[4];
 		}else{
@@ -161,9 +161,9 @@ public class FracCalc{
 	
 	public static int gcf(int x, int y){ //finds greatest common factor													
 		int factor = 1;
-		for (int j = 1; j <= absValue(x) && j <= absValue(y); j++){			
-			if (isDivisibleBy(x, j) && isDivisibleBy(y, j)){
-				factor = j;																	
+		for (int i = 1; i <= absValue(x) && i <= absValue(y); i++){			
+			if (isDivisibleBy(x, i) && isDivisibleBy(y, i)){
+				factor = i;																	
 			}
 		}
 		return factor;
@@ -175,7 +175,8 @@ public class FracCalc{
 		}
 		if (x % y == 0){
 			return true;
-		}else{
+		}
+		else{
 			return false;
 		}
 	}
@@ -184,7 +185,8 @@ public class FracCalc{
 		int answer;
 		if (n >= 0){
 			answer =  n;
-		}else{
+		}
+		else{
 			answer = (n - (2 * n));						
 		}
 		return answer;
