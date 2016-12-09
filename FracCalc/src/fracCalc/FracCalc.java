@@ -5,59 +5,6 @@ import java.util.*;
 
 public class FracCalc{
 	
-	public static void main(String[] args){ //asks user for input
-		Scanner userInput = new Scanner(System.in); 
-		String input;
-		
-		do{
-			System.out.println("Enter fractions or type \"quit\" to quit: ");
-			System.out.println();
-			input = userInput.nextLine();
-			if (!(input.equals("quit"))){ // quit 
-				System.out.println(produceAnswer(input)); //resumes
-			}
-		}while(!(input.equals("quit")));
-	}
-	
-	public static String produceAnswer(String input){ //opValues is operand values
-		String expression = input; 
-		String[] output = expression.split(" ");
-		String[] operands = parseOperands(output);
-		int[] opValues = new int[6]; 
-		for (int i = 0; i < 6; i++){
-			opValues[i] = Integer.parseInt(operands[i]);
-		}
-		opValues = toImproperFrac(opValues);
-		if (output[1].equals("+")){ //looks for add
-			opValues = add(opValues);
-		}
-		if (output[1].equals("-")){
-			opValues = subtract(opValues); //looks for subtract
-		}
-		if (output[1].equals("*")){
-			opValues = multiply(opValues); //looks for multiply
-		}
-		if (output[1].equals("/")){
-			opValues = divide(opValues); //looks for divide
-		}
-		opValues = toMixedNum(opValues);
-		opValues = reducefrac(opValues); //looks for reducefrac aka reduce fraction
-		
-		if (opValues[1] == 0){
-			return opValues[0] + "";
-		}else if (opValues[0] == 0){
-			if (opValues[1] < 0 && opValues[2] < 0){
-				return (absValue(opValues[1]) + "/" + absValue(opValues[2]));
-			}else if (opValues[2] < 0){
-				return (-opValues[1] + "/" + absValue(opValues[2]));
-			}else{
-				return (opValues[1] + "/" + opValues[2]);
-			}
-		}else{
-			return (opValues[0] + "_" + absValue(opValues[1]) + "/" + absValue(opValues[2]));
-		}
-	}
-	
 	public static String[] parseOperands(String[] result){ //determines the function
 		String[] operands = new String[6];
 		if (result[0].indexOf("_") > 0){
@@ -152,13 +99,6 @@ public class FracCalc{
 		return opValues;
 	}
 	
-	public static int[] reducefrac(int[] opValues){ //reduces the fraction
-		int gcf = gcf(opValues[1], opValues[2]);
-		opValues[1] = opValues[1] / gcf;
-		opValues[2] = opValues[2] / gcf;
-		return opValues;
-	}
-	
 	public static int gcf(int x, int y){ //finds greatest common factor													
 		int factor = 1;
 		for (int j = 1; j <= absValue(x) && j <= absValue(y); j++){			
@@ -189,4 +129,73 @@ public class FracCalc{
 		}
 		return answer;
 	}
+	
+	public static int[] reducefrac(int[] opValues){ //reduces the fraction
+		int gcf = gcf(opValues[1], opValues[2]);
+		opValues[1] = opValues[1] / gcf;
+		opValues[2] = opValues[2] / gcf;
+		return opValues;
+	}
+	
+	public static String produceAnswer(String input){ //opValues is operand values
+		String expression = input; 
+		String[] output = expression.split(" ");
+		String[] operands = parseOperands(output);
+		int[] opValues = new int[6]; 
+		for (int i = 0; i < 6; i++){
+			opValues[i] = Integer.parseInt(operands[i]);
+		}
+		opValues = toImproperFrac(opValues);
+		if (output[1].equals("+")){ //looks for add
+			opValues = add(opValues);
+		}
+		if (output[1].equals("-")){
+			opValues = subtract(opValues); //looks for subtract
+		}
+		if (output[1].equals("*")){
+			opValues = multiply(opValues); //looks for multiply
+		}
+		if (output[1].equals("/")){
+			opValues = divide(opValues); //looks for divide
+		}
+		opValues = toMixedNum(opValues);
+		opValues = reducefrac(opValues); //looks for reducefrac aka reduce fraction
+		
+		if (opValues[1] == 0){
+			return opValues[0] + "";
+		}else if (opValues[0] == 0){
+			if (opValues[1] < 0 && opValues[2] < 0){
+				return (absValue(opValues[1]) + "/" + absValue(opValues[2]));
+			}else if (opValues[2] < 0){
+				return (-opValues[1] + "/" + absValue(opValues[2]));
+			}else{
+				return (opValues[1] + "/" + opValues[2]);
+			}
+		}else{
+			return (opValues[0] + "_" + absValue(opValues[1]) + "/" + absValue(opValues[2]));
+		}
+	}
+	
+	public static void main(String[] args){ //asks user for input
+		Scanner userInput = new Scanner(System.in); 
+		String input;
+		
+		do{
+			System.out.println("Enter fractions or type \"quit\" to quit: ");
+			System.out.println();
+			input = userInput.nextLine();
+			if (!(input.equals("quit"))){ // quit 
+				System.out.println(produceAnswer(input)); //resumes
+			}
+		}while(!(input.equals("quit")));
+	}
 }
+
+//** IMPORTANT ** DO NOT DELETE THIS FUNCTION.  This function will be used to test your code
+// This function takes a String 'input' and produces the result
+//
+// input is a fraction string that needs to be evaluated.  For your program, this will be the user input.
+//      e.g. input ==> "1/2 + 3/4"
+//        
+// The function should return the result of the fraction after it has been calculated
+//      e.g. return ==> "1_1/4"
