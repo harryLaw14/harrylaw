@@ -1,5 +1,5 @@
-
-
+//Harry Law
+//2nd period
 import java.util.Arrays;
 
 public class Split {
@@ -46,11 +46,11 @@ public class Split {
 		 * What if it's a fancy sandwich with multiple pieces of bread?
 		 */
 	
-		public static String sandwich_Pt1(String messedUpSandwich){
-			if(messedUpSandwich.indexOf("bread")<0||messedUpSandwich.indexOf("bread")==messedUpSandwich.lastIndexOf("bread"))
+		public static String sandwich_Pt1(String failedSandwich){
+			if(failedSandwich.indexOf("bread")<0||failedSandwich.indexOf("bread")==failedSandwich.lastIndexOf("bread"))
 				return "Not a sandwich! You failed.";
-			String orderedSandwich=messedUpSandwich.substring(messedUpSandwich.indexOf("bread"), messedUpSandwich.lastIndexOf("bread"));
-			String split[] =orderedSandwich.split("bread");
+			String orderedSandwich = failedSandwich.substring(failedSandwich.indexOf("bread"), failedSandwich.lastIndexOf("bread"));
+			String split[] = orderedSandwich.split("bread");
 			String answer="";
 			for(int i=1;i<split.length;i++)
 						answer=answer+split[i];
@@ -65,10 +65,10 @@ public class Split {
 		 * Again, what if it's a fancy sandwich with multiple pieces of bread?
 		 */
 
-		public static String sandwich_Pt2(String messedUpSandwich){
-		if(messedUpSandwich.indexOf("bread")<0||messedUpSandwich.indexOf("bread")==messedUpSandwich.lastIndexOf("bread"))
+		public static String sandwich_Pt2(String failedSandwich){
+		if(failedSandwich.indexOf("bread")<0||failedSandwich.indexOf("bread")==failedSandwich.lastIndexOf("bread"))
 			return "Not a sandwich! You failed.";
-		String orderedSandwich=messedUpSandwich.substring(messedUpSandwich.indexOf("bread"), messedUpSandwich.lastIndexOf("bread"));
+		String orderedSandwich=failedSandwich.substring(failedSandwich.indexOf("bread"), failedSandwich.lastIndexOf("bread"));
 		String split[] =orderedSandwich.split(" ");
 		String answer="";
 		for(int i=0;i<split.length;i++)
